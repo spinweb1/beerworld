@@ -1,4 +1,4 @@
-# beerworld
+# Beer World
 
 ## Project setup
 
