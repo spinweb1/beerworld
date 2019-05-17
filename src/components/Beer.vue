@@ -60,6 +60,7 @@ export default {
   computed: {
     sortedBeers() {
       return this.beers.sort((a,b) => {
+        // modifier incorporates direction into sort conditions
         let modifier = 1;
         if (this.currentSortDir === 'desc') modifier = -1;
         if (a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
