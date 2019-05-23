@@ -4,7 +4,7 @@
         <ul>
           <li>Sort beers by:</li>
           <li><a @click="sort('name')">Name</a></li> 
-          <li><a @click="sort('ph')">Ph</a></li> 
+          <li><a @click="sort('ph')">pH</a></li> 
           <li><a @click="sort('abv')">Alcohol Content</a></li>
         </ul>
     </h3>
@@ -16,10 +16,11 @@
         </div>
         <div class="card-stacked">
           <div class="card-content">
-            <p>{{beer.description | snippet}}...</p>
+            <p class="tagline">{{beer.tagline | periods}}</p>
+            <p class="desc-spacing">{{beer.description | snippet}}...</p>
           </div>
           <div class="card-action">
-            <div class="left-align"><span class="t-purple">Alcohol:</span> {{beer.abv}}%</div> <div class="right-align"><span class="t-purple">Ph:</span> {{beer.ph}}</div>
+            <div class="left-align"><span class="t-purple">Alcohol:</span> {{beer.abv}}%</div> <div class="right-align"><span class="t-purple">pH:</span> {{beer.ph}}</div>
           </div>
         </div>
       </div>
@@ -75,12 +76,15 @@ export default {
 <style>
 img {
   height: 225px;
-  padding: 15px;
+  padding: 18px;
 }
 .center-cols > .col {
   float: none;
   display: inline-block;
   text-align: initial;
+}
+.card .card-content {
+    padding: 12px 12px 12px 0px;
 }
 h3 {
   font-size: 1.5rem;
@@ -100,9 +104,21 @@ li a:hover {
   color: #1BA7CD;
 }
 .left-align {
-  float:left;
+  float: left;
 }
 .t-purple {
   color: #7B236F;
+}
+.tagline {
+  color: #333;
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+}
+.desc-spacing {
+  margin-top: 8px !important;
+  opacity: 0.6;
+}
+.header {
+  text-shadow: 2px 2px 8px #eed484;
 }
 </style>
