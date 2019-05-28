@@ -17,6 +17,13 @@ Vue.filter('periods', val => {
   return val;
 })
 
+// create global filter to limit long taglines
+Vue.filter('taglines', val => {
+  if (!val || typeof (val) != 'string') return ''
+  val = val.slice(0, 32);
+  return val;
+})
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')

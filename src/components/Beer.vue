@@ -16,7 +16,7 @@
         </div>
         <div class="card-stacked">
           <div class="card-content">
-            <p class="tagline">{{beer.tagline | periods}}</p>
+            <p class="tagline">{{beer.tagline | periods | taglines}}</p>
             <p class="desc-spacing">{{beer.description | snippet}}...</p>
           </div>
           <div class="card-action">
@@ -84,7 +84,10 @@ img {
   text-align: initial;
 }
 .card .card-content {
-    padding: 12px 12px 12px 0px;
+  padding: 12px 12px 12px 0px;
+}
+.card.horizontal {
+  background-color: #fcf9f3; 
 }
 h3 {
   font-size: 1.5rem;
